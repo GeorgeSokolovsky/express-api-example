@@ -1,0 +1,20 @@
+{
+  "name": "express-test",
+  "version": "1.0.0",
+  "description": "express test",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "George Sokolovsky",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "expres": "0.0.5",
+    "express": "^4.16.4"
+  }
+}
