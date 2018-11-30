@@ -18,11 +18,7 @@ class CursantController {
         cursants.push(cursant);
     }
 
-    updateOne(id, data) {
-        findIndex
-
-        [index] = data
-    }
+    updateOne(id, data) {}
 
     deleteOne(id) {
         const index = cursants.findIndex(c =>(c.id === id));
