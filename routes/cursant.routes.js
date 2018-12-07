@@ -21,19 +21,19 @@ class CursantsRouter {
             );
         });
 
-        this.__router.delete('/:id', (req, res) => {
+        this.__router.delete('/:id', async (req, res) => {
             const {id} = req.params;
 
             
-                cursantController.deleteOne(+id);
+                await cursantController.deleteOne(id);
                 res.status(200).end();
     
         });
 
-        this.__router.post('/', (req, res) => {
+        this.__router.post('/', async (req, res) => {
             const {body} = req;
 
-            cursantController.create(body);
+            await cursantController.create(body);
 
             res.status(201).end();
         });
@@ -47,8 +47,8 @@ class CursantsRouter {
             res.status(200).end();
         });
 
-        this.__router.get('/', (req, res) => {
-            res.json(cursantController.findAll());
+        this.__router.get('/', async (req, res) => {
+            res.json(await cursantController.findAll());
         });
     }
 }

@@ -1,5 +1,6 @@
 const {cursants} = require('../mocks/cursants.mock');
 const {Cursant} = require('../models/Cursant');
+const {cursantRepository} = require('../repositories/cursant.repository');
  
 class CursantController {
     findOne(id) {
@@ -8,22 +9,18 @@ class CursantController {
         );
     }
 
-    findAll() {
-        return cursants;
+    async findAll() {
+        return await cursantRepository.getAll();
     }
 
-    create({id, name, iq}) {
-        const cursant = new Cursant(+id, name, +iq);
-
-        cursants.push(cursant);
+    async create(cursant) {
+        return await cursantRepository.createOne(cursant);
     }
 
     updateOne(id, data) {}
 
-    deleteOne(id) {
-        const index = cursants.findIndex(c =>(c.id === id));
-        cursants.splice(index, 1);
-
+    async deleteOne(id) {
+        return await cursantRepository.deleteOne(id);
     }
 }
 
